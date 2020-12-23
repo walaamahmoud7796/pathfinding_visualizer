@@ -48,3 +48,13 @@ function getUnvisitedNeighbors(node,grid){
     return neighbors.filter(neighbor => !neighbor.isVisited);
 
 }
+
+export function getNodesInShortestPath(finishNode){
+    const nodesInShortestPath = [];
+    let currentNode = finishNode;
+    while (currentNode!=null){
+        nodesInShortestPath.unshift(currentNode);
+        currentNode = currentNode.previousNode;
+    }
+    return nodesInShortestPath;
+}
